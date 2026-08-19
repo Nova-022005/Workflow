@@ -1,5 +1,4 @@
 name: using-action
-
 on: push
 
 jobs:
