@@ -1,0 +1,21 @@
+name: using-action
+
+on: push
+
+jobs:
+  echo:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: react-app
+      steps:
+        - name: checkout
+          uses: actions/checkout@v7
+        - name: setup node
+          uses: actions/setup-node@v7
+          with:
+              node-version: '24.x'
+        - name: install dependencies
+          run: npm ci
+        - name: Run tests
+          uses: run test
